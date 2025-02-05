@@ -2,7 +2,7 @@ package ash.aop;
 
 import ash.aop.order.OrderRepository;
 import ash.aop.order.OrderService;
-import ash.aop.order.aop.AspectV2;
+import ash.aop.order.aop.AspectV3;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,8 @@ import org.springframework.context.annotation.Import;
 @SpringBootTest
 // bean 등록
 //@Import(AspectV1.class)
-@Import(AspectV2.class)
+//@Import(AspectV2.class)
+@Import(AspectV3.class)
 public class AopTest {
     @Autowired
     OrderService orderService;
