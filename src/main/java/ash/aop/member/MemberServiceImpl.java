@@ -1,7 +1,7 @@
-package ash.aop.order.aop.member;
+package ash.aop.member;
 
-import ash.aop.order.aop.member.annotation.ClassAop;
-import ash.aop.order.aop.member.annotation.MethodAop;
+import ash.aop.member.annotation.ClassAop;
+import ash.aop.member.annotation.MethodAop;
 import org.springframework.stereotype.Component;
 
 @ClassAop

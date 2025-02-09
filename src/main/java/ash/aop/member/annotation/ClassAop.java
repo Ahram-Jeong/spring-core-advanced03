@@ -1,4 +1,4 @@
-package ash.aop.order.aop.member.annotation;
+package ash.aop.member.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
