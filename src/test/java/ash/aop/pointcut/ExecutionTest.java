@@ -98,4 +98,19 @@ public class ExecutionTest {
         pointcut.setExpression("execution(* ash.aop..*.*(..))");
         assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
     }
+
+    @Test
+    void typeExactMatch() {
+        pointcut.setExpression("execution(* ash.aop.member.MemberServiceImpl.*(..))");
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
+    }
+
+    @Test
+    void typeMatchSuperType() {
+        // 타입 매칭 : 부모 타입 허용
+        // execution에서는 부모 타입을 선언해도 그 자식 타입이 매칭된다.
+        // 다형성에서 "부모 타입 = 자식 타입"이 할당 가능하다는 점을 떠올리면 됨
+        pointcut.setExpression("execution(* ash.aop.member.MemberService.*(..))");
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl.class)).isTrue();
+    }
 }
