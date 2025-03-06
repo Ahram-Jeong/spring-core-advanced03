@@ -18,9 +18,12 @@ class CallServiceV0Test {
 
     @Test
     void external() {
-        log.info("target = {}", callServiceV0.getClass());
+//        log.info("target = {}", callServiceV0.getClass());
+        callServiceV0.external();
     }
 
     @Test
-    void internal() {}
+    void internal() {
+        callServiceV0.internal(); // 외부에서 호출하는 경우 프록시를 거치기 때문에 internal()도 CallLogAspect 어드바이스 적용 됨
+    }
 }
